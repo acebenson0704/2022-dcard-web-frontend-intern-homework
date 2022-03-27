@@ -161,7 +161,7 @@ In get data functions
 [stars-shield]: https://img.shields.io/github/stars/acebenson0704/2022-dcard-web-frontend-intern-homework.svg?style=for-the-badge
 [forks-shield]: https://img.shields.io/github/forks/acebenson0704/2022-dcard-web-frontend-intern-homework.svg?style=for-the-badge
 [issues-shield]: https://img.shields.io/github/issues/acebenson0704/2022-dcard-web-frontend-intern-homework.svg?style=for-the-badge
-[license-shield]: https://img.shields.io/github/license/acebenson0704/2022-dcard-web-frontend-intern-homework.svg?style=for-the-badge
+[license-shield]: https://img.shields.io/github/license/acebenson0704/2022-dcard-web-frontend-intern-homework?label=license&style=for-the-badge
 [stars-url]: https://github.com/acebenson0704/2022-dcard-web-frontend-intern-homework/stargazers
 [forks-url]: https://github.com/acebenson0704/2022-dcard-web-frontend-intern-homework/network/members
 [issues-url]: https://github.com/acebenson0704/2022-dcard-web-frontend-intern-homework/issues
