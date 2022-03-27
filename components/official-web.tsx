@@ -5,7 +5,7 @@ import WebCard from './web-card';
 const OfficialWeb = () => {
   return (
     <Hide below="md">
-      <Grid templateColumns="repeat(5, 1fr)" gap={2} bg="gray.900" p={4}>
+      <Grid templateColumns="repeat(5, 1fr)" gap={2} bg="gray.900" p={4} overflow="hidden">
         <GridItem>
           <WebCard href="https://github.com/explore" title="Explore">
             Here&apos;s what&apos;s popular on GitHub today...

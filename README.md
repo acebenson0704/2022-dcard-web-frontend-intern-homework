@@ -1,49 +1,175 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
+<div align"center">
+  [![Stargazers][stars-shield]][stars-url]
+  [![Forks][forks-shield]][forks-url]
+  [![Issues][issues-shield]][issues-url]
+  [![MIT License][license-shield]][license-url]
+</div>
+
+<!-- PROJECT LOGO -->
+<div align="center">
+  <a href="https://github.com/acebenson0704/2022-dcard-web-frontend-intern-homework">
+    <img src="images/github-logo.png" alt="Logo" width="80" height="80" />
+  </a>
+
+  <h3 align="center">Explore GitHub</h3>
+  <p align="center">
+    2022 Dcard Web Frontend Intern Homwwork
+    <br />
+    <a href="https://2022-dcard-web-frontend-intern-homework.vercel.app/"><strong>Visit the web</strong></a>
+  </p>
+</div>
+
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li><a href="#getting-started">Getting Started</a></li>
+    <li><a href="#folder-structure">Folder Structure</a></li>
+    <li><a href="#features">Features</a></li>
+    <li><a href="#acknowledgments">Acknowledgments</a></li>
+  </ol>
+</details>
+
+<!-- ABOUT THE PROJECT -->
+## About The Project
+
+[![Demo][demo-gif]]()
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+### Built With
+
+* [Next.js](https://nextjs.org/)
+* [React.js](https://reactjs.org/)
+* [chakra-ui](https://chakra-ui.com)
+
+<p align="right">(<a href="#top">back to top</a>)</p>
 
 ## Getting Started
 
-First, run the development server:
-
+1. Clone the repos
+```bash
+git clone https://github.com/acebenson0704/2022-dcard-web-frontend-intern-homework.git
+```
+2. Install NPM packages
+```bash
+npm Install
+```
+3. Run the development server:
 ```bash
 npm run dev
-# or
-yarn dev
 ```
-
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+## Folder Structure
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+Similar to monorepo.
 
-## Learn More
+* `components`: react components for reuse or layout.
+  * `data-display`: components which receive **user data** or **repo data** as props
+* `libs`: There are two types of files here:
+  1. Theme files.
+  2. Fetch data functions, including `user.ts`, `repo.ts`, `readme.ts`.
+* `pages`: There are three pages, index page, list repos page, and single repo page. In each page:
+  1. In useEffect, get current paths by dynamic routes feature and call get data function in `libs/`
+  2. Pass data as props to components in `components/data-display/`
 
-To learn more about Next.js, take a look at the following resources:
+<details>
+  <summary>structure</summary>
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+  ```text
+  root/
+  ├── components/
+  │   ├── data-display/
+  │   │   ├── repo-card.tsx
+  │   │   ├── repo-item.tsx
+  │   │   ├── repo-list.tsx
+  │   │   └── user-card.tsx
+  │   ├── layout.tsx
+  │   ├── logo.tsx
+  │   ├── navbar.tsx
+  │   ├── official-web.tsx
+  │   ├── searchbar.tsx
+  │   └── web-card.tsx
+  ├── libs/
+  │   ├── markdown-theme.tsx
+  │   ├── readme.ts
+  │   ├── repo.ts
+  │   ├── theme.ts
+  │   └── user.ts
+  ├── pages/
+  │   ├── users/
+  │   │   └── [username]/
+  │   │       ├── repos/
+  │   │       │   └── [repo].tsx  # Single repository page
+  │   │       └── repos.tsx       # User repositories list page
+  │   ├── _app.tsx
+  │   └── index.tsx               # Index page
+  └── public/
+      └── favicon.ico
+  ```
+</details>
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-## Deploy on Vercel
+## Features
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Dynamic routes
+* Next.js has a file-system based router.
+* The router paths are determined by **pages** folder structure rather than a single file such as `routes.ts`.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### Infinite Scroll
+* Implement infinite scroll by [react-infinite-scroll-component](https://github.com/ankeetmaini/react-infinite-scroll-component).
+* Get only 10 repos at first, and get 10 more repos when scrolling to bottom.
 
-## Problems
+### Catch 404 Error
+* Show _Not Found_ when request path are not a valid user or repo.
+* Directly change the URL to invalid user or repo won't cause _Internal Server Error_.
 
-1. When refreshing page (F5), **function useEffect** and **data state** are wrong in users/[username]/repos.tsx.
-   Solution: router.isReady.
-2. Catch error:
+### Deploy
+* (Deploy to vercel)[https://2022-dcard-web-frontend-intern-homework.vercel.app/]
 
-- 404 - Not found: store in local storage
-- 403 - Frequency limit: Need to wait
+### Cache data in local storage
+In get data functions
+* Before sending request, check local storage first.
+* Cache data in local storage after sending a api request.
 
-3. README.md
+### Render README.md
+* Convert base64 data to raw markdown by [js-base64](https://github.com/dankogai/js-base64)
+* Render the markdown data by [chakra-ui-markdown-renderer](https://github.com/mustaphaturhan/chakra-ui-markdown-renderer) and design my own markdown-theme.
 
-- js-base64: UTF-8
-- react-markdown
-- chakara-ui-markdown-renderer
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+## Acknowledgments
+
+* [axios](https://github.com/axios/axios)
+* [framer-motion](https://github.com/framer/motion)
+* [chakra-ui-markdown-renderer](https://github.com/mustaphaturhan/chakra-ui-markdown-renderer)
+* [js-base64](https://github.com/dankogai/js-base64)
+* [react-icons](https://github.com/react-icons/react-icons)
+* [react-infinite-scroll-component](https://github.com/ankeetmaini/react-infinite-scroll-component)
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+
+<!-- MARKDOWN LINKS & IMAGES -->
+[stars-shield]: https://img.shields.io/github/stars/acebenson0704/2022-dcard-web-frontend-intern-homework.svg?style=for-the-badge
+[forks-shield]: https://img.shields.io/github/forks/acebenson0704/2022-dcard-web-frontend-intern-homework.svg?style=for-the-badge
+[issues-shield]: https://img.shields.io/github/issues/acebenson0704/2022-dcard-web-frontend-intern-homework.svg?style=for-the-badge
+[license-shield]: https://img.shields.io/github/license/acebenson0704/2022-dcard-web-frontend-intern-homework.svg?style=for-the-badge
+[stars-url]: https://github.com/acebenson0704/2022-dcard-web-frontend-intern-homework/stargazers
+[forks-url]: https://github.com/acebenson0704/2022-dcard-web-frontend-intern-homework/network/members
+[issues-url]: https://github.com/acebenson0704/2022-dcard-web-frontend-intern-homework/issues
+[license-url]: https://github.com/acebenson0704/2022-dcard-web-frontend-intern-homework/blob/main/LICENSE.txt
+[demo-gif]: https://github.com/acebenson0704/2022-dcard-web-frontend-intern-homework/blob/main/.github/demo.gif
+
+
