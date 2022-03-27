@@ -1,17 +1,13 @@
+<div id="top"></div>
 
-<div align"center">
-  [![Stargazers][stars-shield]][stars-url]
-  [![Forks][forks-shield]][forks-url]
-  [![Issues][issues-shield]][issues-url]
-  [![MIT License][license-shield]][license-url]
-</div>
+<!-- PROJECT SHIELDS -->
+[![Stargazers][stars-shield]][stars-url]
+[![Forks][forks-shield]][forks-url]
+[![Issues][issues-shield]][issues-url]
+[![MIT License][license-shield]][license-url]
 
 <!-- PROJECT LOGO -->
 <div align="center">
-  <a href="https://github.com/acebenson0704/2022-dcard-web-frontend-intern-homework">
-    <img src="images/github-logo.png" alt="Logo" width="80" height="80" />
-  </a>
-
   <h3 align="center">Explore GitHub</h3>
   <p align="center">
     2022 Dcard Web Frontend Intern Homwwork
@@ -40,7 +36,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Demo][demo-gif]]()
+[![Demo][demo-gif]](https://2022-dcard-web-frontend-intern-homework.vercel.app/)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -170,6 +166,4 @@ In get data functions
 [forks-url]: https://github.com/acebenson0704/2022-dcard-web-frontend-intern-homework/network/members
 [issues-url]: https://github.com/acebenson0704/2022-dcard-web-frontend-intern-homework/issues
 [license-url]: https://github.com/acebenson0704/2022-dcard-web-frontend-intern-homework/blob/main/LICENSE.txt
-[demo-gif]: https://github.com/acebenson0704/2022-dcard-web-frontend-intern-homework/blob/main/.github/demo.gif
-
-
+[demo-gif]: https://github.com/acebenson0704/2022-dcard-web-frontend-intern-homework/blob/main/.github/images/demo.gif
