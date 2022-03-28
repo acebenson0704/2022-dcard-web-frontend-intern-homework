@@ -1,8 +1,9 @@
 import axios from 'axios';
+import notFoundAvatar from '../public/images/not-found-avatar.png';
 
 export type UserInfoProps = {
   username: string;
-  avatar_url: string;
+  avatar_url: string | StaticImageData;
   html_url: string;
   type: string;
   name: string | null;
@@ -16,7 +17,7 @@ export type UserInfoProps = {
 };
 export const defaultUserInfo: UserInfoProps = {
   username: 'Not Found',
-  avatar_url: 'https://avatars.githubusercontent.com/u/32547123?v=4',
+  avatar_url: notFoundAvatar,
   html_url: '',
   type: '',
   name: '',

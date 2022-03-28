@@ -4,13 +4,13 @@ import {
   Box,
   Hide,
   HStack,
-  Image,
   Link,
   Stack,
   Tag,
   TagLabel,
   Text
 } from '@chakra-ui/react';
+import Image from 'next/image';
 import { GoGist, GoLocation, GoRepo } from 'react-icons/go';
 import { BsLink45Deg, BsTwitter } from 'react-icons/bs';
 import { UserInfoProps } from '../../libs/user';
@@ -26,12 +26,14 @@ const UserCard = ({ userInfo }: UserCardProps) => {
     <Box>
       <Box>
         <HStack p={4}>
-          <Image
-            boxSize="100px"
-            borderRadius="lg"
-            src={userInfo.avatar_url}
-            alt="avatar"
-          />
+          <Box boxSize="100px" borderRadius="lg">
+            <Image
+              width="100px"
+              height="100px"
+              src={userInfo.avatar_url}
+              alt="avatar"
+            />
+          </Box>
           <Box pl={4}>
             <Text fontSize="3xl">
               {userInfo.name ? userInfo.name : userInfo.username}

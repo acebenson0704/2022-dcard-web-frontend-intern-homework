@@ -42,8 +42,12 @@ export const markdownTheme = {
     );
   },
   a: (props: any) => {
-    const { children } = props;
-    return <Link color="#58A6FF">{children}</Link>;
+    const { href, children } = props;
+    return (
+      <Link color="#58A6FF" href={href}>
+        {children}
+      </Link>
+    );
   },
   code: (props: any) => {
     const { inline, children, className } = props;
